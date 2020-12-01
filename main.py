@@ -1,5 +1,4 @@
-TOKEN = 'YOUR TOKEN HERE'
-
+TOKEN = ''
 
 import colorama, time, os
 import discord, asyncio, re
