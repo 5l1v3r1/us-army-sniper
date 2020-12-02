@@ -119,6 +119,12 @@ async def on_message(message):
     doxs = re.findall(DOXBIN_REGEX, message_content)
     emails = re.findall(EMAIL_REGEX, message_content)
 
+    if len(nitros) != 0:
+        for nitro in nitros:
+            print_success(f'nitro: discord.gift/{nitro}')
+            get_message_infos(message)        
+            claim_nitro(nitro)
+
     if len(emails) != 0:
         for email in emails:
             print_success(f'email: {email}')
@@ -128,15 +134,7 @@ async def on_message(message):
         for dox in doxs:
             print_success(f'dox: {dox}')
             get_message_infos(message)      
-                 
-
-    if len(nitros) != 0:
-        for nitro in nitros:
-            print_success(f'nitro: discord.gift/{nitro}')
-            get_message_infos(message)        
-            claim_nitro(nitro)
-            
-
+                
     if len(pastebins) != 0:
         for pastebin in pastebins:
             print_success(f'pastebin: {pastebin}')
@@ -147,7 +145,6 @@ async def on_message(message):
             print_success(f'ip address: {ip}')
             get_message_infos(message)   
                  
-
     if len(tokens) != 0:
         for token in tokens:
             print_success(f'token: {token}')
